@@ -11,7 +11,7 @@ public class HelloController {
     private static final Logger LOG = LoggerFactory.getLogger(HelloController.class);
     
     @RequestMapping("/hello")
-    public String index(@RequestParam String name) {
+    public String index(@RequestParam(defaultValue = "s7") String name) {
         LOG.info("/hello,name={}",name);
         return "hello "+name+"，this is first messge";
     }
